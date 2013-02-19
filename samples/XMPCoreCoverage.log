@@ -1,0 +1,1677 @@
+XMPCoreCoverage starting   Tue Feb 19 09:34:56 CET 2013
+XMPCore Version: Adobe XMP Core 5.1.0-jc003
+
+
+// =============================================================================
+// Test of namespace registry
+// =============================================================================
+
+
+// --------------------------
+// List predefined namespaces
+
+adobe:ns:meta/   --->   x:
+http://cipa.jp/exif/1.0/   --->   exifEX:
+http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/   --->   Iptc4xmpCore:
+http://iptc.org/std/Iptc4xmpExt/2008-02-29/   --->   Iptc4xmpExt:
+http://ns.adobe.com/DICOM/   --->   DICOM:
+http://ns.adobe.com/StockPhoto/1.0/   --->   bmsp:
+http://ns.adobe.com/TransformXMP/   --->   txmp:
+http://ns.adobe.com/album/1.0/   --->   album:
+http://ns.adobe.com/asf/1.0/   --->   asf:
+http://ns.adobe.com/bwf/bext/1.0/   --->   bext:
+http://ns.adobe.com/camera-raw-settings/1.0/   --->   crs:
+http://ns.adobe.com/creatorAtom/1.0/   --->   creatorAtom:
+http://ns.adobe.com/exif/1.0/   --->   exif:
+http://ns.adobe.com/exif/1.0/aux/   --->   aux:
+http://ns.adobe.com/iX/1.0/   --->   iX:
+http://ns.adobe.com/jp2k/1.0/   --->   jp2k:
+http://ns.adobe.com/jpeg/1.0/   --->   jpeg:
+http://ns.adobe.com/pdf/1.3/   --->   pdf:
+http://ns.adobe.com/pdfx/1.3/   --->   pdfx:
+http://ns.adobe.com/photoshop/1.0/   --->   photoshop:
+http://ns.adobe.com/png/1.0/   --->   png:
+http://ns.adobe.com/riff/info/   --->   riffinfo:
+http://ns.adobe.com/swf/1.0/   --->   swf:
+http://ns.adobe.com/tiff/1.0/   --->   tiff:
+http://ns.adobe.com/xap/1.0/   --->   xmp:
+http://ns.adobe.com/xap/1.0/bj/   --->   xmpBJ:
+http://ns.adobe.com/xap/1.0/g/   --->   xmpG:
+http://ns.adobe.com/xap/1.0/g/img/   --->   xmpGImg:
+http://ns.adobe.com/xap/1.0/mm/   --->   xmpMM:
+http://ns.adobe.com/xap/1.0/rights/   --->   xmpRights:
+http://ns.adobe.com/xap/1.0/sType/Dimensions#   --->   stDim:
+http://ns.adobe.com/xap/1.0/sType/Font#   --->   stFnt:
+http://ns.adobe.com/xap/1.0/sType/Job#   --->   stJob:
+http://ns.adobe.com/xap/1.0/sType/ManifestItem#   --->   stMfs:
+http://ns.adobe.com/xap/1.0/sType/ResourceEvent#   --->   stEvt:
+http://ns.adobe.com/xap/1.0/sType/ResourceRef#   --->   stRef:
+http://ns.adobe.com/xap/1.0/sType/Version#   --->   stVer:
+http://ns.adobe.com/xap/1.0/t/   --->   xmpT:
+http://ns.adobe.com/xap/1.0/t/pg/   --->   xmpTPg:
+http://ns.adobe.com/xmp/1.0/DynamicMedia/   --->   xmpDM:
+http://ns.adobe.com/xmp/1.0/Script/   --->   xmpScript:
+http://ns.adobe.com/xmp/Identifier/qual/1.0/   --->   xmpidq:
+http://ns.adobe.com/xmp/note/   --->   xmpNote:
+http://ns.adobe.com/xmp/transient/1.0/   --->   xmpx:
+http://ns.adobe.com/xmp/wav/1.0/   --->   wav:
+http://ns.useplus.org/ldf/xmp/1.0/   --->   plus:
+http://purl.org/dc/elements/1.1/   --->   dc:
+http://www.aiim.org/pdfa/ns/extension/   --->   pdfaExtension:
+http://www.aiim.org/pdfa/ns/field#   --->   pdfaField:
+http://www.aiim.org/pdfa/ns/id/   --->   pdfaid:
+http://www.aiim.org/pdfa/ns/property#   --->   pdfaProperty:
+http://www.aiim.org/pdfa/ns/schema#   --->   pdfaSchema:
+http://www.aiim.org/pdfa/ns/type#   --->   pdfaType:
+http://www.npes.org/pdfx/ns/id/   --->   pdfxid:
+http://www.w3.org/1999/02/22-rdf-syntax-ns#   --->   rdf:
+http://www.w3.org/XML/1998/namespace   --->   xml:
+
+
+// ---------------------------------
+// Test namespace registry functions
+
+registerNamespace ns1:   ns1:   --->   ns:test1/
+registerNamespace ns2:   ns2:   --->   ns:test2/
+getNamespacePrefix ns1:   ns1:
+getNamespaceURI ns1:   ns:test1/
+getNamespacePrefix bogus:   null
+getNamespaceURI ns1:   null
+
+// =============================================================================
+// Test alias registry and functions
+// =============================================================================
+
+pdf:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+pdf:BaseURL   --->   xmp:BaseURL NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:CreationDate   --->   xmp:CreateDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:Creator   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:ModDate   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:Subject   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+pdf:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+photoshop:Caption   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Keywords   --->   dc:subject NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+photoshop:Marked   --->   xmpRights:Marked NS(http://ns.adobe.com/xap/1.0/rights/), FORM (0x0)
+photoshop:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:WebStatement   --->   xmpRights:WebStatement NS(http://ns.adobe.com/xap/1.0/rights/), FORM (0x0)
+png:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+png:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+png:CreationTime   --->   xmp:CreateDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Description   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+png:ModificationTime   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Software   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+tiff:Artist   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+tiff:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+tiff:DateTime   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+tiff:ImageDescription   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+tiff:Software   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+xmp:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+xmp:Authors   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Description   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Format   --->   dc:format NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Keywords   --->   dc:subject NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Locale   --->   dc:language NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmpRights:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+
+
+// ------------------------
+// Add ns2: to ns1: aliases
+
+pdf:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+pdf:BaseURL   --->   xmp:BaseURL NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:CreationDate   --->   xmp:CreateDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:Creator   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:ModDate   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:Subject   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+pdf:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+photoshop:Caption   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Keywords   --->   dc:subject NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+photoshop:Marked   --->   xmpRights:Marked NS(http://ns.adobe.com/xap/1.0/rights/), FORM (0x0)
+photoshop:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:WebStatement   --->   xmpRights:WebStatement NS(http://ns.adobe.com/xap/1.0/rights/), FORM (0x0)
+png:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+png:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+png:CreationTime   --->   xmp:CreateDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Description   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+png:ModificationTime   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Software   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+tiff:Artist   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+tiff:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+tiff:DateTime   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+tiff:ImageDescription   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+tiff:Software   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+xmp:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+xmp:Authors   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Description   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Format   --->   dc:format NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Keywords   --->   dc:subject NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Locale   --->   dc:language NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmpRights:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+
+
+// ----------------------------
+// Resolve ns2: to ns1: aliases
+
+resolveAlias ns1:SimpleActual:   null   (wrong way!)
+resolveAlias ns2:SimpleAlias:   null
+
+resolveAlias ns2:BagAlias:   null
+resolveAlias ns2:SeqAlias:   null
+resolveAlias ns2:AltAlias:   null
+resolveAlias ns2:AltTextAlias:   null
+
+resolveAlias ns2:BagItemAlias:   null
+resolveAlias ns2:SeqItemAlias:   null
+resolveAlias ns2:AltItemAlias:   null
+resolveAlias ns2:AltTextItemAlias:   null
+
+
+// --------------------------------------------
+// Test setProperty through ns2: simple aliases
+
+Check for aliases and bases:
+ROOT NODE
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:AltItemAlias = "AltItem value"
+		ns2:AltTextItemAlias = "AltTextItem value"
+		ns2:BagItemAlias = "BagItem value"
+		ns2:SeqItemAlias = "SeqItem value"
+		ns2:SimpleAlias = "Simple value"
+
+
+
+// --------------------------------
+// Delete some ns2: to ns1: aliases
+
+pdf:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+pdf:BaseURL   --->   xmp:BaseURL NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:CreationDate   --->   xmp:CreateDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:Creator   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:ModDate   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+pdf:Subject   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+pdf:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+photoshop:Caption   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:Keywords   --->   dc:subject NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+photoshop:Marked   --->   xmpRights:Marked NS(http://ns.adobe.com/xap/1.0/rights/), FORM (0x0)
+photoshop:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+photoshop:WebStatement   --->   xmpRights:WebStatement NS(http://ns.adobe.com/xap/1.0/rights/), FORM (0x0)
+png:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+png:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+png:CreationTime   --->   xmp:CreateDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Description   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+png:ModificationTime   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Software   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+png:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x1e00)
+tiff:Artist   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+tiff:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+tiff:DateTime   --->   xmp:ModifyDate NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+tiff:ImageDescription   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+tiff:Software   --->   xmp:CreatorTool NS(http://ns.adobe.com/xap/1.0/), FORM (0x0)
+xmp:Author   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x600)
+xmp:Authors   --->   dc:creator NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Description   --->   dc:description NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Format   --->   dc:format NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Keywords   --->   dc:subject NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Locale   --->   dc:language NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmp:Title   --->   dc:title NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+xmpRights:Copyright   --->   dc:rights NS(http://purl.org/dc/elements/1.1/), FORM (0x0)
+
+
+// =============================================================================
+// Test simple constructors and parsing, setting the instance ID
+// =============================================================================
+
+Empty XMP object:
+ROOT NODE
+
+
+XMP object with name (Name: 'New object name'):
+ROOT NODE (New object name)
+
+
+Construct and parse from buffer (Name: 'Test:XMPCoreCoverage/kRDFCoverage'):
+ROOT NODE (Test:XMPCoreCoverage/kRDFCoverage)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:ArrayProp1	(0x200 : ARRAY)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:ArrayProp2	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item2.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item2.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp3	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item3.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item3.2 value"
+		ns1:ArrayProp4	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item4.1 value"
+			[2] = "Item4.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp5	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item5.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+			[2] = "Item5.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4	(0x150 : HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+		ns1:QualProp5	(0x250 : HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:SimpleProp1 = "Simple1 value"
+		ns1:SimpleProp2 = "Simple2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+		ns1:StructProp	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:NestedStructProp	(0x100 : STRUCT)
+			ns1:Outer	(0x100 : STRUCT)
+				ns1:Middle	(0x100 : STRUCT)
+					ns1:Inner	(0x100 : STRUCT)
+						ns1:Field1 = "Field1 value"
+						ns2:Field2 = "Field2 value"
+
+
+Add instance ID (Name: 'Test:XMPCoreCoverage/kRDFCoverage'):
+ROOT NODE (Test:XMPCoreCoverage/kRDFCoverage)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:ArrayProp1	(0x200 : ARRAY)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:ArrayProp2	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item2.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item2.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp3	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item3.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item3.2 value"
+		ns1:ArrayProp4	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item4.1 value"
+			[2] = "Item4.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp5	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item5.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+			[2] = "Item5.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4	(0x150 : HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+		ns1:QualProp5	(0x250 : HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:SimpleProp1 = "Simple1 value"
+		ns1:SimpleProp2 = "Simple2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+		ns1:StructProp	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:NestedStructProp	(0x100 : STRUCT)
+			ns1:Outer	(0x100 : STRUCT)
+				ns1:Middle	(0x100 : STRUCT)
+					ns1:Inner	(0x100 : STRUCT)
+						ns1:Field1 = "Field1 value"
+						ns2:Field2 = "Field2 value"
+	http://ns.adobe.com/xap/1.0/mm/ = "xmpMM:"	(0x80000000 : SCHEMA_NODE)
+		xmpMM:InstanceID = "meta2:Original"
+
+
+Clone and add instance ID (Name: 'Test:XMPCoreCoverage/kRDFCoverage'):
+ROOT NODE (Test:XMPCoreCoverage/kRDFCoverage)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:ArrayProp1	(0x200 : ARRAY)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:ArrayProp2	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item2.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item2.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp3	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item3.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item3.2 value"
+		ns1:ArrayProp4	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item4.1 value"
+			[2] = "Item4.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp5	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item5.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+			[2] = "Item5.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4	(0x150 : HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+		ns1:QualProp5	(0x250 : HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:SimpleProp1 = "Simple1 value"
+		ns1:SimpleProp2 = "Simple2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+		ns1:StructProp	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:NestedStructProp	(0x100 : STRUCT)
+			ns1:Outer	(0x100 : STRUCT)
+				ns1:Middle	(0x100 : STRUCT)
+					ns1:Inner	(0x100 : STRUCT)
+						ns1:Field1 = "Field1 value"
+						ns2:Field2 = "Field2 value"
+	http://ns.adobe.com/xap/1.0/mm/ = "xmpMM:"	(0x80000000 : SCHEMA_NODE)
+		xmpMM:InstanceID = "meta2:Original"
+
+
+
+// =============================================================================
+// Test setProperty and related methods
+// =============================================================================
+
+A few basic set property calls:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 2"
+			[3] = "BagItem 3"
+			[4] = "BagItem 4"
+		ns1:Prop = "Prop value"
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+
+// ----------------------------------
+// Add some properties with qualifier
+
+CountArrayItems Bag = 4
+Add some qualifiers:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 2"
+			[3] = "BagItem 3"
+			[4] = "BagItem 4"
+		ns1:Prop = "Prop value"
+		ns1:QualProp1 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-QUAL"	(0x20 : QUALIFIER)
+				?ns2:Qual1 = "Qual1 value"	(0x20 : QUALIFIER)
+				?ns2:Qual3 = "Qual3 value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-ATTR"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+Change values and keep qualifiers:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 2"
+			[3] = "BagItem 3"
+			[4] = "BagItem 4"
+		ns1:Prop = "Prop value"
+		ns1:QualProp1 = "new value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-QUAL"	(0x20 : QUALIFIER)
+				?ns2:Qual1 = "Qual1 value"	(0x20 : QUALIFIER)
+				?ns2:Qual3 = "Qual3 value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "new value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-ATTR"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "new value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "new value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+
+// =============================================================================
+// Test getProperty, deleteProperty and related methods
+// =============================================================================
+
+
+// -----------------------------
+// Set properties with qualifier
+
+XMP object:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 2"
+			[3] = "BagItem 3"
+			[4] = "BagItem 4"
+		ns1:Prop = "Prop value"
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual1 = "Qual1 value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+
+// ---------------------
+// Get simple properties
+
+getProperty ns1:Prop =   Prop value (<none>)
+getProperty ns1:XMLProp =   <PropValue/> (<none>)
+getProperty ns1:URIProp =   URI:value/ (URI)
+getArrayItem ns1:Bag[2] =   BagItem 2 (<none>)
+getArrayItem with no schema URI - threw XMPException #4 :   Empty schema namespace URI)
+
+// ---------------------------------
+// Get array items and struct fields
+
+getArrayItem ns1:Seq[1] =   SeqItem value (<none>)
+getArrayItem ns1:Alt[1] =   AltItem value (<none>)
+
+getStructField ns1:Struct/ns2:Field1 =   Field1 value (<none>)
+getStructField ns1:Struct/ns2:Field2 =   Field2 value (<none>)
+getStructField ns1:Struct/ns2:Field3 =   Field3 value (<none>)
+getStructField ns1:Struct/ns2:Field3 =   Field3 value (<none>)
+getStructField ns1:Struct/ns2:Field3 =   Field3 value (<none>)
+
+
+// -------------
+// Get qualifier
+
+getQualifier  ns1:QualProp1/?ns2:Qual1 =   Qual1 value (QUALIFIER)
+getQualifier with no schema URI - threw XMPException #4 :   Empty schema namespace URI
+getQualifier ns1:QualProp3/@xml-lang =   en-US (QUALIFIER)
+getQualifier ns1:QualProp3/?ns2:Qual =   Qual value (QUALIFIER)
+
+
+// -------------------------
+// Get non-simple properties
+
+getProperty ns1:Bag =   null (ARRAY)
+getProperty ns1:Seq =   null (ARRAY | ARRAY_ORDERED)
+getProperty ns1:Alt =   null (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+getProperty ns1:Struct =   null (STRUCT)
+
+
+// ---------------------------
+// Get not existing properties
+
+getProperty with bogus schema URI - threw XMPException #101 :   Unregistered schema namespace URI
+getProperty ns1:Bogus (not existing) =   null
+ArrayItem ns1:Bag[99] (not existing) =   null
+getStructField ns1:Struct/ns2:Bogus (not existing) =   null
+getQualifier ns1:Prop/?ns2:Bogus (not existing) =   null
+
+// =============================================================================
+// Test doesPropertyExist, deleteProperty, and related methods
+// =============================================================================
+
+XMP object:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 2"
+			[3] = "BagItem 3"
+			[4] = "BagItem 4"
+		ns1:Prop = "Prop value"
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual1 = "Qual1 value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+doesPropertyExist ns1:Prop =    true
+doesPropertyExist ns1:Struct =    true
+doesArrayItemExist ns1:Bag[2] =    true
+doesArrayItemExist ns1:Seq[last()] =    true
+doesStructFieldExist ns1:Struct/ns2:Field1 =    true
+doesQualifierExist ns1:QualProp1/?ns2:Qual1 =    true
+doesQualifierExist ns1:QualProp2/?xml:lang =    true
+
+doesPropertyExist (namespace is null) =    false
+doesArrayItemExist (namespace is null) =    false
+doesQualifierExist ns:Bogus (namespace not existing) =    false
+doesPropertyExist ns1:Bogus =    false
+doesArrayItemExist ns1:Bag[99] =    false
+doesStructFieldExist ns1:Struct/ns2:Bogus =    false
+doesQualifierExist ns1:Prop/?ns2:Bogus =    false
+
+// =============================================================================
+// Test deleteProperty
+// =============================================================================
+
+Delete Prop, Bag[2], and Struct1/Field1:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 3"
+			[3] = "BagItem 4"
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual1 = "Qual1 value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+Delete QualProp1/?ns2:Qual1, QualProp2/?xml:lang, QualProp3:/ns2:Qual, and QualProp4/?xml:lang:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 1"
+			[2] = "BagItem 3"
+			[3] = "BagItem 4"
+		ns1:QualProp1 = "Prop value"
+		ns1:QualProp2 = "Prop value"
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:Struct	(0x100 : STRUCT)
+			ns2:Field2 = "Field2 value"
+			ns2:Field3 = "Field3 value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+Delete all of Bag and Struct:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Alt	(0xe00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE)
+			[1] = "AltItem value"
+		ns1:QualProp1 = "Prop value"
+		ns1:QualProp2 = "Prop value"
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "en-US"	(0x20 : QUALIFIER)
+		ns1:QualProp4 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:Seq	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "SeqItem value"
+		ns1:URIProp = "URI:value/"	(0x2 : URI)
+		ns1:XMLProp = "<PropValue/>"
+
+
+
+// =============================================================================
+// Test setLocalizedText and getLocalizedText
+// =============================================================================
+
+Set x-default value:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:AltText	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "default value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-default"	(0x20 : QUALIFIER)
+
+
+Set en/en-us value:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:AltText	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "en-us value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[2] = "en-us value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "en-US"	(0x20 : QUALIFIER)
+
+
+Set en/en-uk value:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:AltText	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "en-uk value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[2] = "en-uk value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "en-US"	(0x20 : QUALIFIER)
+
+
+
+getLocalizedText en/en-ca =   en-uk value (lang: en-US, opt: HAS_QUALIFIER | HAS_LANGUAGE)
+getProperty ns1:AltText =   null (lang: null, opt: ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+
+// =============================================================================
+// Test setProperty... and getProperty... methods (set/get with literal values)
+// =============================================================================
+
+A few basic binary Set... calls (Name: 'Test:XMPCoreCoverage/kDateTimeRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kDateTimeRDF)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Bool0 = "False"
+		ns1:Bool1 = "True"
+		ns1:Date1 = "2003"
+		ns1:Date10 = "2000-01-02T03:04:05"
+		ns1:Date11 = "2000-01-02T03:04:05+06:07"
+		ns1:Date12 = "2000-01-02T03:04:05-06:07"
+		ns1:Date13 = "2000-01-02T03:04:05.000000009-06:07"
+		ns1:Date2 = "2003-12"
+		ns1:Date3 = "2003-12-31"
+		ns1:Date4 = "2003-12-31T12:34Z"
+		ns1:Date5 = "2003-12-31T12:34:56Z"
+		ns1:Date6 = "2003-12-31T12:34:56.001Z"
+		ns1:Date7 = "2003-12-31T12:34:56.000000001Z"
+		ns1:Date8 = "2003-12-31T10:04:56-02:30"
+		ns1:Date9 = "2003-12-31T15:49:56+03:15"
+		ns1:Double = "4.2"
+		ns1:Int = "42"
+
+
+
+getPropertyBoolean ns1:Bool0 =   false
+getPropertyBoolean ns1:Bool1 =   true
+getPropertyBoolean ns1:Int =   42
+getPropertyBoolean ns1:Int =   4.2
+
+getPropertyDate (1) =   2003
+getPropertyDate (2) =   2003-12
+getPropertyDate (3) =   2003-12-31
+getPropertyDate (4) =   2003-12-31T12:34Z
+getPropertyDate (5) =   2003-12-31T12:34:56Z
+getPropertyDate (6) =   2003-12-31T12:34:56.001Z
+getPropertyDate (7) =   2003-12-31T12:34:56.000000001Z
+getPropertyDate (8) =   2003-12-31T10:04:56-02:30
+getPropertyDate (9) =   2003-12-31T15:49:56+03:15
+getPropertyDate (10) =   2000-01-02T03:04:05
+getPropertyDate (11) =   2000-01-02T03:04:05+06:07
+getPropertyDate (12) =   2000-01-02T03:04:05-06:07
+getPropertyDate (13) =   2000-01-02T03:04:05.000000009-06:07
+Get and re-set the dates in NS2 (Name: 'Test:XMPCoreCoverage/kDateTimeRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kDateTimeRDF)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:Bool0 = "False"
+		ns1:Bool1 = "True"
+		ns1:Date1 = "2003"
+		ns1:Date10 = "2000-01-02T03:04:05"
+		ns1:Date11 = "2000-01-02T03:04:05+06:07"
+		ns1:Date12 = "2000-01-02T03:04:05-06:07"
+		ns1:Date13 = "2000-01-02T03:04:05.000000009-06:07"
+		ns1:Date2 = "2003-12"
+		ns1:Date3 = "2003-12-31"
+		ns1:Date4 = "2003-12-31T12:34Z"
+		ns1:Date5 = "2003-12-31T12:34:56Z"
+		ns1:Date6 = "2003-12-31T12:34:56.001Z"
+		ns1:Date7 = "2003-12-31T12:34:56.000000001Z"
+		ns1:Date8 = "2003-12-31T10:04:56-02:30"
+		ns1:Date9 = "2003-12-31T15:49:56+03:15"
+		ns1:Double = "4.2"
+		ns1:Int = "42"
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:Date1 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date10 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date11 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date12 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date13 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date2 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date3 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date4 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date5 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date6 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date7 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date8 = "2000-01-02T03:04:05.000000009-06:07"
+		ns2:Date9 = "2000-01-02T03:04:05.000000009-06:07"
+
+
+
+// =============================================================================
+// Test parsing with multiple buffers and various options
+// =============================================================================
+
+Parse from String (Name: 'Test:XMPCoreCoverage/kSimpleRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kSimpleRDF)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:AltTextProp	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "x-one value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "x-two value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayOfStructProp	(0x200 : ARRAY)
+			[1]	(0x100 : STRUCT)
+				ns2:Field1 = "Item-1"
+				ns2:Field2 = "Field 1.2 value"
+			[2]	(0x100 : STRUCT)
+				ns2:Field1 = "Item-2"
+				ns2:Field2 = "Field 2.2 value"
+		ns1:ArrayProp	(0x200 : ARRAY)
+			[1] = "Item1 value"
+			[2] = "Item2 value"
+		ns1:QualProp = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:SimpleProp = "Simple value"
+		ns1:StructProp	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+
+
+Parse and require xmpmeta element, which is missing:
+ROOT NODE
+
+
+Parse RDF with multiple nested namespaces (Name: 'Test:XMPCoreCoverage/kNamespaceRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kNamespaceRDF)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:NestedStructProp	(0x100 : STRUCT)
+			ns2:Outer	(0x100 : STRUCT)
+				ns3:Middle	(0x100 : STRUCT)
+					ns4:Inner	(0x100 : STRUCT)
+						ns5:Field1 = "Field1 value"
+						ns6:Field2 = "Field2 value"
+
+
+Parse and require xmpmeta element, which is present (Name: 'Test:XMPCoreCoverage/kXMPMetaRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kXMPMetaRDF)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:XMPMetaProp = "xmpmeta packet"
+
+
+Parse and reconcile inconsistent aliases (Name: 'Test:XMPCoreCoverage/kInconsistentRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kInconsistentRDF)
+	http://purl.org/dc/elements/1.1/ = "dc:"	(0x80000000 : SCHEMA_NODE)
+		dc:creator	(0x600 : ARRAY | ARRAY_ORDERED)
+			[1] = "DC Creator [1]"
+
+
+Parse and do not reconcile inconsistent aliases - threw XMPException #203 :   Mismatch between alias and base nodes
+
+// =============================================================================
+// Test CR and LF in values
+// =============================================================================
+
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kNewlineRDF"
+        xmlns:ns1="ns:test1/"
+        xmlns:ns2="ns:test2/"
+      ns1:HasCR="ASCII &#xD; CR"
+      ns1:HasLF="ASCII &#xA; LF"
+      ns1:HasCRLF="ASCII &#xD;&#xA; CRLF"
+      ns2:HasCR="ASCII &#xD; CR"
+      ns2:HasLF="ASCII &#xA; LF"
+      ns2:HasCRLF="ASCII &#xD;&#xA; CRLF"/>
+  </rdf:RDF>
+</x:xmpmeta>
+
+
+
+## HasCR and HasLF and HasCRLF correctly retrieved
+
+
+// =============================================================================
+// Test serialization with various options
+// =============================================================================
+
+Parse simple RDF, serialize with various options (Name: 'Test:XMPCoreCoverage/kSimpleRDF'):
+ROOT NODE (Test:XMPCoreCoverage/kSimpleRDF)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:AltTextProp	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "x-one value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "x-two value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayOfStructProp	(0x200 : ARRAY)
+			[1]	(0x100 : STRUCT)
+				ns2:Field1 = "Item-1"
+				ns2:Field2 = "Field 1.2 value"
+			[2]	(0x100 : STRUCT)
+				ns2:Field1 = "Item-2"
+				ns2:Field2 = "Field 2.2 value"
+		ns1:ArrayProp	(0x200 : ARRAY)
+			[1] = "Item1 value"
+			[2] = "Item2 value"
+		ns1:QualProp = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:SimpleProp = "Simple value"
+		ns1:StructProp	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:Another = "Something in another schema"
+		ns2:Yet	(0x100 : STRUCT)
+			pdf:More = "Yet more in another schema"
+
+
+
+// -----------------
+// Default serialize
+
+<?xpacket begin="?" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"
+        xmlns:ns1="ns:test1/"
+        xmlns:ns2="ns:test2/"
+        xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+      ns1:SimpleProp="Simple value"
+      ns2:Another="Something in another schema">
+      <ns1:ArrayProp>
+        <rdf:Bag>
+          <rdf:li>Item1 value</rdf:li>
+          <rdf:li>Item2 value</rdf:li>
+        </rdf:Bag>
+      </ns1:ArrayProp>
+      <ns1:StructProp
+        ns2:Field1="Field1 value"
+        ns2:Field2="Field2 value"/>
+      <ns1:QualProp rdf:parseType="Resource">
+        <rdf:value>Prop value</rdf:value>
+        <ns2:Qual>Qual value</ns2:Qual>
+      </ns1:QualProp>
+      <ns1:AltTextProp>
+        <rdf:Alt>
+          <rdf:li xml:lang="x-ONE">x-one value</rdf:li>
+          <rdf:li xml:lang="x-TWO">x-two value</rdf:li>
+        </rdf:Alt>
+      </ns1:AltTextProp>
+      <ns1:ArrayOfStructProp>
+        <rdf:Bag>
+          <rdf:li
+            ns2:Field1="Item-1"
+            ns2:Field2="Field 1.2 value"/>
+          <rdf:li
+            ns2:Field1="Item-2"
+            ns2:Field2="Field 2.2 value"/>
+        </rdf:Bag>
+      </ns1:ArrayOfStructProp>
+      <ns2:Yet
+        pdf:More="Yet more in another schema"/>
+    </rdf:Description>
+  </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+             
+<?xpacket end="w"?>
+
+// --------------------------------
+// Compact RDF, no packet serialize
+
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"
+        xmlns:ns1="ns:test1/"
+        xmlns:ns2="ns:test2/"
+        xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+      ns1:SimpleProp="Simple value"
+      ns2:Another="Something in another schema">
+      <ns1:ArrayProp>
+        <rdf:Bag>
+          <rdf:li>Item1 value</rdf:li>
+          <rdf:li>Item2 value</rdf:li>
+        </rdf:Bag>
+      </ns1:ArrayProp>
+      <ns1:StructProp
+        ns2:Field1="Field1 value"
+        ns2:Field2="Field2 value"/>
+      <ns1:QualProp rdf:parseType="Resource">
+        <rdf:value>Prop value</rdf:value>
+        <ns2:Qual>Qual value</ns2:Qual>
+      </ns1:QualProp>
+      <ns1:AltTextProp>
+        <rdf:Alt>
+          <rdf:li xml:lang="x-ONE">x-one value</rdf:li>
+          <rdf:li xml:lang="x-TWO">x-two value</rdf:li>
+        </rdf:Alt>
+      </ns1:AltTextProp>
+      <ns1:ArrayOfStructProp>
+        <rdf:Bag>
+          <rdf:li
+            ns2:Field1="Item-1"
+            ns2:Field2="Field 1.2 value"/>
+          <rdf:li
+            ns2:Field1="Item-2"
+            ns2:Field2="Field 2.2 value"/>
+        </rdf:Bag>
+      </ns1:ArrayOfStructProp>
+      <ns2:Yet
+        pdf:More="Yet more in another schema"/>
+    </rdf:Description>
+  </rdf:RDF>
+</x:xmpmeta>
+
+
+// -------------------
+// Read-only serialize
+
+<?xpacket begin="?" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"
+        xmlns:ns1="ns:test1/"
+        xmlns:ns2="ns:test2/"
+        xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+      ns1:SimpleProp="Simple value"
+      ns2:Another="Something in another schema">
+      <ns1:ArrayProp>
+        <rdf:Bag>
+          <rdf:li>Item1 value</rdf:li>
+          <rdf:li>Item2 value</rdf:li>
+        </rdf:Bag>
+      </ns1:ArrayProp>
+      <ns1:StructProp
+        ns2:Field1="Field1 value"
+        ns2:Field2="Field2 value"/>
+      <ns1:QualProp rdf:parseType="Resource">
+        <rdf:value>Prop value</rdf:value>
+        <ns2:Qual>Qual value</ns2:Qual>
+      </ns1:QualProp>
+      <ns1:AltTextProp>
+        <rdf:Alt>
+          <rdf:li xml:lang="x-ONE">x-one value</rdf:li>
+          <rdf:li xml:lang="x-TWO">x-two value</rdf:li>
+        </rdf:Alt>
+      </ns1:AltTextProp>
+      <ns1:ArrayOfStructProp>
+        <rdf:Bag>
+          <rdf:li
+            ns2:Field1="Item-1"
+            ns2:Field2="Field 1.2 value"/>
+          <rdf:li
+            ns2:Field1="Item-2"
+            ns2:Field2="Field 2.2 value"/>
+        </rdf:Bag>
+      </ns1:ArrayOfStructProp>
+      <ns2:Yet
+        pdf:More="Yet more in another schema"/>
+    </rdf:Description>
+  </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end="r"?>
+
+// ---------------------------
+// Alternate newline serialize
+
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003"><--newline-->
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><--newline-->
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"<--newline-->
+        xmlns:ns1="ns:test1/"<--newline-->
+        xmlns:ns2="ns:test2/"<--newline-->
+        xmlns:pdf="http://ns.adobe.com/pdf/1.3/"<--newline-->
+      ns1:SimpleProp="Simple value"<--newline-->
+      ns2:Another="Something in another schema"><--newline-->
+      <ns1:ArrayProp><--newline-->
+        <rdf:Bag><--newline-->
+          <rdf:li>Item1 value</rdf:li><--newline-->
+          <rdf:li>Item2 value</rdf:li><--newline-->
+        </rdf:Bag><--newline-->
+      </ns1:ArrayProp><--newline-->
+      <ns1:StructProp<--newline-->
+        ns2:Field1="Field1 value"<--newline-->
+        ns2:Field2="Field2 value"/><--newline-->
+      <ns1:QualProp rdf:parseType="Resource"><--newline-->
+        <rdf:value>Prop value</rdf:value><--newline-->
+        <ns2:Qual>Qual value</ns2:Qual><--newline-->
+      </ns1:QualProp><--newline-->
+      <ns1:AltTextProp><--newline-->
+        <rdf:Alt><--newline-->
+          <rdf:li xml:lang="x-ONE">x-one value</rdf:li><--newline-->
+          <rdf:li xml:lang="x-TWO">x-two value</rdf:li><--newline-->
+        </rdf:Alt><--newline-->
+      </ns1:AltTextProp><--newline-->
+      <ns1:ArrayOfStructProp><--newline-->
+        <rdf:Bag><--newline-->
+          <rdf:li<--newline-->
+            ns2:Field1="Item-1"<--newline-->
+            ns2:Field2="Field 1.2 value"/><--newline-->
+          <rdf:li<--newline-->
+            ns2:Field1="Item-2"<--newline-->
+            ns2:Field2="Field 2.2 value"/><--newline-->
+        </rdf:Bag><--newline-->
+      </ns1:ArrayOfStructProp><--newline-->
+      <ns2:Yet<--newline-->
+        pdf:More="Yet more in another schema"/><--newline-->
+    </rdf:Description><--newline-->
+  </rdf:RDF><--newline-->
+</x:xmpmeta><--newline-->
+
+
+// --------------------------
+// Alternate indent serialize
+
+-->-->-->-->--><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+-->-->-->-->-->--><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+-->-->-->-->-->-->--><rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"
+-->-->-->-->-->-->-->-->-->xmlns:ns1="ns:test1/"
+-->-->-->-->-->-->-->-->-->xmlns:ns2="ns:test2/"
+-->-->-->-->-->-->-->-->-->xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+-->-->-->-->-->-->-->-->ns1:SimpleProp="Simple value"
+-->-->-->-->-->-->-->-->ns2:Another="Something in another schema">
+-->-->-->-->-->-->-->--><ns1:ArrayProp>
+-->-->-->-->-->-->-->-->--><rdf:Bag>
+-->-->-->-->-->-->-->-->-->--><rdf:li>Item1 value</rdf:li>
+-->-->-->-->-->-->-->-->-->--><rdf:li>Item2 value</rdf:li>
+-->-->-->-->-->-->-->-->--></rdf:Bag>
+-->-->-->-->-->-->-->--></ns1:ArrayProp>
+-->-->-->-->-->-->-->--><ns1:StructProp
+-->-->-->-->-->-->-->-->-->ns2:Field1="Field1 value"
+-->-->-->-->-->-->-->-->-->ns2:Field2="Field2 value"/>
+-->-->-->-->-->-->-->--><ns1:QualProp rdf:parseType="Resource">
+-->-->-->-->-->-->-->-->--><rdf:value>Prop value</rdf:value>
+-->-->-->-->-->-->-->-->--><ns2:Qual>Qual value</ns2:Qual>
+-->-->-->-->-->-->-->--></ns1:QualProp>
+-->-->-->-->-->-->-->--><ns1:AltTextProp>
+-->-->-->-->-->-->-->-->--><rdf:Alt>
+-->-->-->-->-->-->-->-->-->--><rdf:li xml:lang="x-ONE">x-one value</rdf:li>
+-->-->-->-->-->-->-->-->-->--><rdf:li xml:lang="x-TWO">x-two value</rdf:li>
+-->-->-->-->-->-->-->-->--></rdf:Alt>
+-->-->-->-->-->-->-->--></ns1:AltTextProp>
+-->-->-->-->-->-->-->--><ns1:ArrayOfStructProp>
+-->-->-->-->-->-->-->-->--><rdf:Bag>
+-->-->-->-->-->-->-->-->-->--><rdf:li
+-->-->-->-->-->-->-->-->-->-->-->ns2:Field1="Item-1"
+-->-->-->-->-->-->-->-->-->-->-->ns2:Field2="Field 1.2 value"/>
+-->-->-->-->-->-->-->-->-->--><rdf:li
+-->-->-->-->-->-->-->-->-->-->-->ns2:Field1="Item-2"
+-->-->-->-->-->-->-->-->-->-->-->ns2:Field2="Field 2.2 value"/>
+-->-->-->-->-->-->-->-->--></rdf:Bag>
+-->-->-->-->-->-->-->--></ns1:ArrayOfStructProp>
+-->-->-->-->-->-->-->--><ns2:Yet
+-->-->-->-->-->-->-->-->-->pdf:More="Yet more in another schema"/>
+-->-->-->-->-->-->--></rdf:Description>
+-->-->-->-->-->--></rdf:RDF>
+-->-->-->-->--></x:xmpmeta>
+
+
+// -----------------------
+// Small padding serialize
+
+<?xpacket begin="?" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"
+        xmlns:ns1="ns:test1/"
+        xmlns:ns2="ns:test2/"
+        xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+      ns1:SimpleProp="Simple value"
+      ns2:Another="Something in another schema">
+      <ns1:ArrayProp>
+        <rdf:Bag>
+          <rdf:li>Item1 value</rdf:li>
+          <rdf:li>Item2 value</rdf:li>
+        </rdf:Bag>
+      </ns1:ArrayProp>
+      <ns1:StructProp
+        ns2:Field1="Field1 value"
+        ns2:Field2="Field2 value"/>
+      <ns1:QualProp rdf:parseType="Resource">
+        <rdf:value>Prop value</rdf:value>
+        <ns2:Qual>Qual value</ns2:Qual>
+      </ns1:QualProp>
+      <ns1:AltTextProp>
+        <rdf:Alt>
+          <rdf:li xml:lang="x-ONE">x-one value</rdf:li>
+          <rdf:li xml:lang="x-TWO">x-two value</rdf:li>
+        </rdf:Alt>
+      </ns1:AltTextProp>
+      <ns1:ArrayOfStructProp>
+        <rdf:Bag>
+          <rdf:li
+            ns2:Field1="Item-1"
+            ns2:Field2="Field 1.2 value"/>
+          <rdf:li
+            ns2:Field1="Item-2"
+            ns2:Field2="Field 2.2 value"/>
+        </rdf:Bag>
+      </ns1:ArrayOfStructProp>
+      <ns2:Yet
+        pdf:More="Yet more in another schema"/>
+    </rdf:Description>
+  </rdf:RDF>
+</x:xmpmeta>
+    
+<?xpacket end="w"?>
+
+// --------------------------------
+// Serialize with exact packet size
+
+Minimum packet size is 1470 bytes
+
+<?xpacket begin="?" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="Test:XMPCoreCoverage/kSimpleRDF"
+        xmlns:ns1="ns:test1/"
+        xmlns:ns2="ns:test2/"
+        xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+      ns1:SimpleProp="Simple value"
+      ns2:Another="Something in another schema">
+      <ns1:ArrayProp>
+        <rdf:Bag>
+          <rdf:li>Item1 value</rdf:li>
+          <rdf:li>Item2 value</rdf:li>
+        </rdf:Bag>
+      </ns1:ArrayProp>
+      <ns1:StructProp
+        ns2:Field1="Field1 value"
+        ns2:Field2="Field2 value"/>
+      <ns1:QualProp rdf:parseType="Resource">
+        <rdf:value>Prop value</rdf:value>
+        <ns2:Qual>Qual value</ns2:Qual>
+      </ns1:QualProp>
+      <ns1:AltTextProp>
+        <rdf:Alt>
+          <rdf:li xml:lang="x-ONE">x-one value</rdf:li>
+          <rdf:li xml:lang="x-TWO">x-two value</rdf:li>
+        </rdf:Alt>
+      </ns1:AltTextProp>
+      <ns1:ArrayOfStructProp>
+        <rdf:Bag>
+          <rdf:li
+            ns2:Field1="Item-1"
+            ns2:Field2="Field 1.2 value"/>
+          <rdf:li
+            ns2:Field1="Item-2"
+            ns2:Field2="Field 2.2 value"/>
+        </rdf:Bag>
+      </ns1:ArrayOfStructProp>
+      <ns2:Yet
+        pdf:More="Yet more in another schema"/>
+    </rdf:Description>
+  </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end="w"?>
+
+Exact packet size smaller than minimal packet length - threw XMPException #103 :   Exact size must be a multiple of the Unicode element
+
+// =============================================================================
+// Test iteration methods
+// =============================================================================
+
+Parse "coverage" RDF, add Bag items out of order (Name: 'Test:XMPCoreCoverage/kRDFCoverage'):
+ROOT NODE (Test:XMPCoreCoverage/kRDFCoverage)
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:ArrayProp1	(0x200 : ARRAY)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:ArrayProp2	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item2.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item2.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp3	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item3.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-ONE"	(0x20 : QUALIFIER)
+			[2] = "Item3.2 value"
+		ns1:ArrayProp4	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item4.1 value"
+			[2] = "Item4.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-TWO"	(0x20 : QUALIFIER)
+		ns1:ArrayProp5	(0x1e00 : ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+			[1] = "Item5.1 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+			[2] = "Item5.2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-XXX"	(0x20 : QUALIFIER)
+		ns1:QualProp1 = "Prop value"	(0x10 : HAS_QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp2 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp3 = "Prop value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+				?ns2:Qual = "Qual value"	(0x20 : QUALIFIER)
+		ns1:QualProp4	(0x150 : HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+		ns1:QualProp5	(0x250 : HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[1] = "Item1.1 value"
+			[2] = "Item1.2 value"
+		ns1:SimpleProp1 = "Simple1 value"
+		ns1:SimpleProp2 = "Simple2 value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+				?xml:lang = "x-default"	(0x20 : QUALIFIER)
+		ns1:StructProp	(0x100 : STRUCT)
+			ns2:Field1 = "Field1 value"
+			ns2:Field2 = "Field2 value"
+	ns:test2/ = "ns2:"	(0x80000000 : SCHEMA_NODE)
+		ns2:Bag	(0x200 : ARRAY)
+			[1] = "BagItem 2"
+			[2] = "BagItem 1"
+			[3] = "BagItem 3"
+		ns2:NestedStructProp	(0x100 : STRUCT)
+			ns1:Outer	(0x100 : STRUCT)
+				ns1:Middle	(0x100 : STRUCT)
+					ns1:Inner	(0x100 : STRUCT)
+						ns1:Field1 = "Field1 value"
+						ns2:Field2 = "Field2 value"
+		ns2:Prop = "Prop value"
+
+
+
+// -----------------
+// Default iteration
+
+NS (ns:test1/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test1/)   PATH (ns1:SimpleProp1)   VALUE (Simple1 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:SimpleProp2)   VALUE (Simple2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:SimpleProp2/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:ArrayProp1)   VALUE ()  OPTIONS (ARRAY)
+NS (null)   PATH (ns1:ArrayProp1[1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp1[2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:ArrayProp2)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp2[1])   VALUE (Item2.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp2[1]/xml:lang)   VALUE (x-ONE)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp2[2])   VALUE (Item2.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp2[2]/xml:lang)   VALUE (x-TWO)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:ArrayProp3)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp3[1])   VALUE (Item3.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp3[1]/xml:lang)   VALUE (x-ONE)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp3[2])   VALUE (Item3.2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:ArrayProp4)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp4[1])   VALUE (Item4.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp4[2])   VALUE (Item4.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp4[2]/xml:lang)   VALUE (x-TWO)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:ArrayProp5)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp5[1])   VALUE (Item5.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp5[1]/xml:lang)   VALUE (x-XXX)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp5[2])   VALUE (Item5.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp5[2]/xml:lang)   VALUE (x-XXX)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:StructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test2/)   PATH (ns1:StructProp/ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns1:StructProp/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:QualProp1)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp1/ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp2)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp2/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp2/ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp3)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp3/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp3/ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp4)   VALUE ()  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+NS (ns:test2/)   PATH (ns1:QualProp4/ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns1:QualProp4/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp4/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp5)   VALUE ()  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+NS (null)   PATH (ns1:QualProp5[1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:QualProp5[2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp5[3])   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test2/)   PATH (ns2:NestedStructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns1:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Bag)   VALUE (null)  OPTIONS (ARRAY)
+NS (null)   PATH (ns2:Bag[1])   VALUE (BagItem 2)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[2])   VALUE (BagItem 1)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[3])   VALUE (BagItem 3)  OPTIONS (<none>)
+
+// ---------------------------
+// Iterate omitting qualifiers
+
+NS (ns:test1/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test1/)   PATH (ns1:SimpleProp1)   VALUE (Simple1 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:SimpleProp2)   VALUE (Simple2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (ns:test1/)   PATH (ns1:ArrayProp1)   VALUE ()  OPTIONS (ARRAY)
+NS (null)   PATH (ns1:ArrayProp1[1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp1[2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:ArrayProp2)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp2[1])   VALUE (Item2.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (null)   PATH (ns1:ArrayProp2[2])   VALUE (Item2.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (ns:test1/)   PATH (ns1:ArrayProp3)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp3[1])   VALUE (Item3.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (null)   PATH (ns1:ArrayProp3[2])   VALUE (Item3.2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:ArrayProp4)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp4[1])   VALUE (Item4.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp4[2])   VALUE (Item4.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (ns:test1/)   PATH (ns1:ArrayProp5)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH (ns1:ArrayProp5[1])   VALUE (Item5.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (null)   PATH (ns1:ArrayProp5[2])   VALUE (Item5.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (ns:test1/)   PATH (ns1:StructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test2/)   PATH (ns1:StructProp/ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns1:StructProp/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:QualProp1)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp2)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (ns:test1/)   PATH (ns1:QualProp3)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (ns:test1/)   PATH (ns1:QualProp4)   VALUE ()  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+NS (ns:test2/)   PATH (ns1:QualProp4/ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns1:QualProp4/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:QualProp5)   VALUE ()  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+NS (null)   PATH (ns1:QualProp5[1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:QualProp5[2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test2/)   PATH (ns2:NestedStructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns1:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Bag)   VALUE (null)  OPTIONS (ARRAY)
+NS (null)   PATH (ns2:Bag[1])   VALUE (BagItem 2)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[2])   VALUE (BagItem 1)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[3])   VALUE (BagItem 3)  OPTIONS (<none>)
+
+// ----------------------------
+// Iterate with just leaf names
+
+NS (ns:test1/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test1/)   PATH (ns1:SimpleProp1)   VALUE (Simple1 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:SimpleProp2)   VALUE (Simple2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:ArrayProp1)   VALUE ()  OPTIONS (ARRAY)
+NS (null)   PATH ([1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH ([2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:ArrayProp2)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH ([1])   VALUE (Item2.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-ONE)  OPTIONS (QUALIFIER)
+NS (null)   PATH ([2])   VALUE (Item2.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-TWO)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:ArrayProp3)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH ([1])   VALUE (Item3.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-ONE)  OPTIONS (QUALIFIER)
+NS (null)   PATH ([2])   VALUE (Item3.2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:ArrayProp4)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH ([1])   VALUE (Item4.1 value)  OPTIONS (<none>)
+NS (null)   PATH ([2])   VALUE (Item4.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-TWO)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:ArrayProp5)   VALUE ()  OPTIONS (ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+NS (null)   PATH ([1])   VALUE (Item5.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-XXX)  OPTIONS (QUALIFIER)
+NS (null)   PATH ([2])   VALUE (Item5.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-XXX)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:StructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test2/)   PATH (ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:QualProp1)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER)
+NS (ns:test2/)   PATH (ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp2)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp3)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp4)   VALUE ()  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE | STRUCT)
+NS (ns:test2/)   PATH (ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp5)   VALUE ()  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE | ARRAY)
+NS (null)   PATH ([1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH ([2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (http://www.w3.org/XML/1998/namespace)   PATH ([3])   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test2/)   PATH (ns2:NestedStructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns1:Outer)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns1:Middle)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns1:Inner)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns1:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Bag)   VALUE (null)  OPTIONS (ARRAY)
+NS (null)   PATH ([1])   VALUE (BagItem 2)  OPTIONS (<none>)
+NS (null)   PATH ([2])   VALUE (BagItem 1)  OPTIONS (<none>)
+NS (null)   PATH ([3])   VALUE (BagItem 3)  OPTIONS (<none>)
+
+// ----------------------------
+// Iterate with just leaf nodes
+
+NS (ns:test1/)   PATH (ns1:SimpleProp1)   VALUE (Simple1 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:SimpleProp2)   VALUE (Simple2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:SimpleProp2/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp1[1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp1[2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp2[1])   VALUE (Item2.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp2[1]/xml:lang)   VALUE (x-ONE)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp2[2])   VALUE (Item2.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp2[2]/xml:lang)   VALUE (x-TWO)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp3[1])   VALUE (Item3.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp3[1]/xml:lang)   VALUE (x-ONE)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp3[2])   VALUE (Item3.2 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp4[1])   VALUE (Item4.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:ArrayProp4[2])   VALUE (Item4.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp4[2]/xml:lang)   VALUE (x-TWO)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp5[1])   VALUE (Item5.1 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp5[1]/xml:lang)   VALUE (x-XXX)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:ArrayProp5[2])   VALUE (Item5.2 value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:ArrayProp5[2]/xml:lang)   VALUE (x-XXX)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns1:StructProp/ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns1:StructProp/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test1/)   PATH (ns1:QualProp1)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp1/ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp2)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp2/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp2/ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns1:QualProp3)   VALUE (Prop value)  OPTIONS (HAS_QUALIFIER | HAS_LANGUAGE)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp3/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp3/ns2:Qual)   VALUE (Qual value)  OPTIONS (QUALIFIER)
+NS (ns:test2/)   PATH (ns1:QualProp4/ns2:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns1:QualProp4/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp4/xml:lang)   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (null)   PATH (ns1:QualProp5[1])   VALUE (Item1.1 value)  OPTIONS (<none>)
+NS (null)   PATH (ns1:QualProp5[2])   VALUE (Item1.2 value)  OPTIONS (<none>)
+NS (http://www.w3.org/XML/1998/namespace)   PATH (ns1:QualProp5[3])   VALUE (x-default)  OPTIONS (QUALIFIER)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns1:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[1])   VALUE (BagItem 2)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[2])   VALUE (BagItem 1)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[3])   VALUE (BagItem 3)  OPTIONS (<none>)
+
+// -----------------------------
+// Iterate just the schema nodes
+
+NS (ns:test1/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test2/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+
+// --------------------------
+// Iterate the ns2: namespace
+
+NS (ns:test2/)   PATH (null)   VALUE (null)  OPTIONS (SCHEMA_NODE)
+NS (ns:test2/)   PATH (ns2:NestedStructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns1:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Bag)   VALUE (null)  OPTIONS (ARRAY)
+NS (null)   PATH (ns2:Bag[1])   VALUE (BagItem 2)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[2])   VALUE (BagItem 1)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[3])   VALUE (BagItem 3)  OPTIONS (<none>)
+
+// ----------------
+// Start at ns2:Bag
+
+NS (ns:test2/)   PATH (ns2:Bag)   VALUE (null)  OPTIONS (ARRAY)
+NS (null)   PATH (ns2:Bag[1])   VALUE (BagItem 2)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[2])   VALUE (BagItem 1)  OPTIONS (<none>)
+NS (null)   PATH (ns2:Bag[3])   VALUE (BagItem 3)  OPTIONS (<none>)
+
+// ---------------------------------------
+// Start at ns2:NestedStructProp/ns1:Outer
+
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test1/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns1:Field1)   VALUE (Field1 value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:NestedStructProp/ns1:Outer/ns1:Middle/ns1:Inner/ns2:Field2)   VALUE (Field2 value)  OPTIONS (<none>)
+
+// --------------------------
+// Iterate an empty namespace
+
+
+// ----------------------------------------------------------
+// Iterate the top of the ns2: namespace with just leaf names
+
+NS (ns:test2/)   PATH (ns2:NestedStructProp)   VALUE ()  OPTIONS (STRUCT)
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+NS (ns:test2/)   PATH (ns2:Bag)   VALUE (null)  OPTIONS (ARRAY)
+
+// ----------------------------------------------------------
+// Iterate the top of the ns2: namespace with just leaf nodes
+
+NS (ns:test2/)   PATH (ns2:Prop)   VALUE (Prop value)  OPTIONS (<none>)
+
+// =============================================================================
+// XPath composition utilities
+// =============================================================================
+
+composeArrayItemPath ArrayProp[2] =   ArrayProp[2]
+composeStructFieldPath StructProperty/ns2:Field3 =   StructProperty/ns2:Field3
+composeStructFieldPath QualProp/?ns2:Qual =   QualProp/?ns2:Qual
+composeQualifierPath ns1:AltTextProp/?xml:lang =   AltTextProp/?xml:lang
+Modified simple RDF:
+ROOT NODE
+	ns:test1/ = "ns1:"	(0x80000000 : SCHEMA_NODE)
+		ns1:AltTextProp	(0x1e50 : HAS_QUALIFIER | HAS_LANGUAGE | ARRAY | ARRAY_ORDERED | ARRAY_ALTERNATE | ARRAY_ALT_TEXT)
+				?xml:lang = "newns1:alttextprop/?xml:langvalue"	(0x20 : QUALIFIER)
+			[1] = "initival value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "x-default"	(0x20 : QUALIFIER)
+			[2] = "initival value"	(0x50 : HAS_QUALIFIER | HAS_LANGUAGE)
+					?xml:lang = "en-US"	(0x20 : QUALIFIER)
+		ns1:ArrayProp	(0x200 : ARRAY)
+			[1] = "Item 1"
+			[2] = "new ns1:ArrayProp[2] value"
+		ns1:QualProp	(0x110 : HAS_QUALIFIER | STRUCT)
+				?ns2:Qual = "new ns1:QualProp/?ns2:Qual value"	(0x20 : QUALIFIER)
+		ns1:StructProperty	(0x100 : STRUCT)
+			ns2:Field3 = "new ns1:StructProp/ns2:Field3 value"
+
+
+
+// =============================================================================
+// Test date/time utilities and special values
+// =============================================================================
+
+Print date 2000 Jan 31 12:34:56 PST =   2000-01-31T12:34:55.999999999-08:00
+Print zero date =   0000-01-01T00:00
+Print date created by a calendar =   2007-02-28T00:00+01:00
+Print current date =   2013-02-19T09:34:57.056+01:00
+
+
+
+XMPCoreCoverage ending   Tue Feb 19 09:34:57 CET 2013
